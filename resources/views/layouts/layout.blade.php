@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="text-[1.5vw] sm:text-[10px]" lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html class="text-[1.5vw] sm:text-[.75vw] 2xl:text-[14px]" lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,7 +9,7 @@
             @hasSection('title') - @endif Betterflix
         </title>
     </head>
-    <body class="text-[1.5vw] sm:text-[10px]">
+    <body class="text-[1.5vw] sm:text-[.75vw] 2xl:text-[14px]">
         <nav class="relative h-[41px] md:h-[70px] w-full top-0 z-50">
             <div class="h-full w-full bg-transparent">
                 <div class="flex h-full items-center px-[4%] xl:px-[60px] bg-gradient-to-b from-black/[30%] to-transparent">
@@ -28,7 +28,7 @@
                 </div>
             </div>
         </nav>
-        <main class="z-0">
+        <main class="z-0 mt-[-41px] md:mt-[-70px]">
             @yield('content')
         </main>
     </body>

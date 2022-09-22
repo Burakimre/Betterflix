@@ -7,5 +7,6 @@
 @section('content')
     <div class="h-full min-h-screen w-full bg-neutral-900">
         <x-movies.billboard />
+        <x-movies.row />
     </div>
 @endsection
