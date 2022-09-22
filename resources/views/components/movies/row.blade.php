@@ -6,23 +6,26 @@
     </h2>
     <div>
         <div class="px-[4%]">
-            <div class="whitespace-nowrap">
+            <div class="flex overflow-visible">
                 @for ($i = 0; $i < 20; $i++)
-                    <div class="inline-block align-top box-border w-1/6 py-0 px-[0.2vw] first:pl-0">
-                        <a href="">
+                    <div class="flex-none w-1/6 px-[0.2vw] first:pl-0">
+                        <a href="#">
                             @if ($i % 2 == 0)
                                 <div class="relative overflow-hidden rounded-[0.2vw]">
-                                    <img src="{{ url('/images/sandman.jpg') }}">
+                                    <img class="w-full" src="{{ url('/images/sandman.jpg') }}">
                                 </div>
                             @else
                                 <div class="relative overflow-hidden rounded-[0.2vw]">
-                                    <img src="{{ url('/images/jojo.jpg') }}">
+                                    <img class="w-full" src="{{ url('/images/jojo.jpg') }}">
                                 </div>
                             @endif
                         </a>
                     </div>
                 @endfor
             </div>
+            <span class="">
+                <b class="indicator-icon icon-rightCaret"></b>
+            </span>
         </div>
     </div>
 </div>
