@@ -5,8 +5,11 @@
 @endsection
 
 @section('content')
-    <div class="h-full min-h-screen w-full bg-neutral-900">
+    <div class="h-full min-h-screen w-full">
         <x-movies.billboard />
-        <x-movies.row />
+
+        @foreach ($rows as $row)
+            <x-movies.row :title="$row['title']" :media="json_encode($row['media'])"/>
+        @endforeach
     </div>
 @endsection

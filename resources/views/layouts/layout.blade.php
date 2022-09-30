@@ -28,7 +28,7 @@
                 </div>
             </div>
         </nav>
-        <main class="z-0 mt-[-41px] md:mt-[-70px]">
+        <main class="overflow-x-hidden z-0 mt-[-41px] md:mt-[-70px] bg-neutral-900">
             @yield('content')
         </main>
     </body>

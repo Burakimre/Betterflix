@@ -34,6 +34,7 @@
     src: url('/public/fonts/NF-Icon.woff');
 }
 
-body {
+html, body {
     font-family: NetflixSans, Helvetica Neue, Helvetica, Arial, sans-serif;
+    user-select: none;
 }
