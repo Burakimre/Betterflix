@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use App\Services\TMDBMovieApi;
+use GuzzleHttp\Client;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -13,7 +15,15 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        $this->app->bind(Newsletter::class, function () {
+            $base_uri = 'https://api.themoviedb.org/';
+            $client = new Client([
+                'base_uri' => $base_uri,
+                'api_key' => config('services.tmdb.key')
+            ]);
+
+            return new TMDBMovieApi($client);
+        });
     }
 
     /**
