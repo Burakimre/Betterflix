@@ -33,6 +33,7 @@ return [
 
 
     'tmdb' => [
-        'key' => env('TMDB_APP_KEY')
+        'url' => env('TMDB_URL'),
+        'token' => env('TMDB_TOKEN')
     ],
 ];

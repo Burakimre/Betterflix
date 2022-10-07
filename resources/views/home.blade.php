@@ -8,8 +8,8 @@
     <div class="h-full min-h-screen w-full">
         <x-movies.billboard />
 
-        @foreach ($rows as $row)
+        {{-- @foreach ($rows as $row)
             <x-movies.row :title="$row['title']" :media="json_encode($row['media'])"/>
-        @endforeach
+        @endforeach --}}
     </div>
 @endsection
