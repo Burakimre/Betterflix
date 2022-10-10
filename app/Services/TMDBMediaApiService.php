@@ -9,6 +9,7 @@ use App\Services\Concerns\BuildBaseRequest;
 use App\Services\Concerns\CanSendGetRequest;
 use App\Services\Concerns\CanSendPostRequest;
 use App\Services\DataTransferObjects\Media;
+use Illuminate\Support\Collection;
 
 class TMDBMediaApiService implements MediaApi
 {
@@ -23,10 +24,16 @@ class TMDBMediaApiService implements MediaApi
 
     public function getPopularMovies()
     {
-        $data = $this->get(
+        $response = $this->get(
             request: $this->buildRequestWithUrl(),
             url: '/3/movie/popular'
-        )->json()['results'];
+        );
+
+        if (!$response->successful()) {
+            return Collection::make();
+        }
+
+        $data = $response->json()['results'];
 
         return collect($data)->map(function($media) {
             return Media::fromTMDB($media);
@@ -35,10 +42,16 @@ class TMDBMediaApiService implements MediaApi
 
     public function getPopularShows()
     {
-        $data = $this->get(
+        $response = $this->get(
             request: $this->buildRequestWithUrl(),
             url: '/3/tv/popular'
-        )->json()['results'];
+        );
+
+        if (!$response->successful()) {
+            return Collection::make();
+        }
+
+        $data = $response->json()['results'];
 
         return collect($data)->map(function($media) {
             return Media::fromTMDB($media);
