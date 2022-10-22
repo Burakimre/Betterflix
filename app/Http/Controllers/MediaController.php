@@ -17,4 +17,9 @@ class MediaController extends Controller
     {
         return $mediaApi->getPopularShows();
     }
+
+    public function getMoviesByGenre()
+    {
+        
+    }
 }

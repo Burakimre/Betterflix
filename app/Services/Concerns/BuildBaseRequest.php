@@ -28,12 +28,12 @@ trait BuildBaseRequest
         );
     }
 
-    public function buildRequestWithUrl(): PendingRequest
+    public function buildRequestWithUrl($queries = []): PendingRequest
     {
+        $queries['api_key'] = $this->apiToken;
+
         return $this->withBaseUrl()->withOptions([
-            'query' => [
-                'api_key' => $this->apiToken
-            ]
+            'query' => $queries
         ]);
     }
 
